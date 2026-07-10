@@ -5,6 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amertat Armaiti Universal Network</title>
     <style>
+        /* استایل اختصاصی برای لوگوی هیرو */
+.hero-logo {
+    width: 100%;
+    max-width: 280px; /* حداکثر اندازه لوگو در دسکتاپ - می‌توانی این عدد را کم یا زیاد کنی */
+    height: auto; /* حفظ تناسب ابعاد عکس */
+    display: block;
+    margin: 0 auto 20px auto; /* وسط‌چین کردن لوگو و ایجاد فاصله با متن زیرین */
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.15)); /* یک سایه ملایم و شیک پشت لوگو */
+    transition: transform 0.3s ease; /* انیمیشن نرم برای حرکت */
+}
+
+/* افکت جذاب وقتی کاربر ماوس را روی لوگو می‌برد */
+.hero-logo:hover {
+    transform: scale(1.03); /* بزرگ شدن بسیار ملایم */
+}
+
+/* تنظیمات مخصوص گوشی‌های موبایل */
+@media (max-width: 768px) {
+    .hero-logo {
+        max-width: 200px; /* در گوشی‌های موبایل لوگو کمی کوچک‌تر نمایش داده می‌شود تا فیت شود */
+    }
+}
         :root {
             --bg-deep: #060112;
             --bg-space: #0d0422;
