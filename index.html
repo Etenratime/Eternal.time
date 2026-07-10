@@ -5,6 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amertat Armaiti Universal Network</title>
     <style>
+        /* باکس دربرگیرنده متن‌های هیرو */
+.hero-text {
+    text-align: center;
+    margin-top: 15px; /* ایجاد یک فاصله مناسب و استاندارد با لوگوی بالایی */
+    padding: 0 20px;
+}
+
+/* استایل کلمه ETERNAL TIME */
+.main-title {
+    font-size: 42px; /* ابعاد بزرگ و خوانا برای عنوان اصلی */
+    font-weight: 900;
+    color: #ffffff;
+    letter-spacing: 4px; /* ایجاد فاصله شیک بین حروف انگلیسی */
+    margin: 0 0 10px 0;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.2); /* سایه ملایم برای درخشش متن */
+    text-transform: uppercase;
+}
+
+/* استایل شعار زیرین */
+.sub-title {
+    font-size: 16px;
+    color: #888888; /* رنگ خاکستری ملایم برای ایجاد تضاد بصری */
+    letter-spacing: 1px;
+    line-height: 1.6;
+    margin: 0 auto;
+    max-width: 600px; /* جلوگیری از کشیده شدن بیش از حد متن در مانیتورهای عمیق */
+}
+
+/* بهینه‌سازی خودکار برای گوشی‌های موبایل */
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 28px; /* کوچک‌تر شدن عنوان در موبایل برای جلوگیری از شکستن خط */
+        letter-spacing: 2px;
+    }
+    
+    .sub-title {
+        font-size: 13px; /* جمع‌وجور شدن شعار در صفحه گوشی */
+        padding: 0 10px;
+    }
+}
         /* استایل کلی بخش آکادمی */
 .academy-container {
     padding: 60px 20px;
