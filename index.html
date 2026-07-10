@@ -5,6 +5,149 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amertat Armaiti Universal Network</title>
     <style>
+        /* استایل کلی بخش آکادمی */
+.academy-container {
+    padding: 60px 20px;
+    background: #0d0d0d; /* مشکی عمیق */
+    color: #ffffff;
+    font-family: 'Vazir', Tahoma, sans-serif;
+    direction: rtl; /* راست‌چین برای متن‌های فارسی */
+    text-align: center;
+}
+
+.section-header {
+    margin-bottom: 40px;
+}
+
+.academy-title {
+    font-size: 24px;
+    color: #00ffcc; /* سبز فسفری مدرن/فرکانسی */
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.academy-subtitle {
+    font-size: 14px;
+    color: #888;
+}
+
+/* ساختار چیدمان کارت‌ها به صورت ردیفی و ستونی */
+.products-grid {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: separate;
+    border-spacing: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.product-card {
+    display: table-cell;
+    background: #141414;
+    border: 1px solid #222;
+    border-radius: 12px;
+    padding: 30px 20px;
+    vertical-align: top;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.product-card:hover {
+    border-color: #00ffcc;
+    transform: translateY(-5px);
+}
+
+/* پلاک محبوب‌ترین */
+.badge {
+    position: absolute;
+    top: -12px;
+    left: 20px;
+    background: #00ffcc;
+    color: #000;
+    padding: 4px 12px;
+    font-size: 11px;
+    font-weight: bold;
+    border-radius: 20px;
+}
+
+.product-card h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.product-desc {
+    font-size: 13px;
+    color: #aaa;
+    line-height: 1.8;
+    min-height: 70px;
+    margin-bottom: 20px;
+}
+
+.price-tag {
+    font-size: 16px;
+    font-weight: bold;
+    color: #00ffcc;
+    margin-bottom: 25px;
+    background: rgba(0, 255, 204, 0.05);
+    padding: 8px;
+    border-radius: 6px;
+}
+
+/* استایل دکمه‌های پرداخت */
+.payment-buttons {
+    display: block;
+}
+
+.btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+    transition: opacity 0.2s;
+    box-sizing: border-box;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+/* رنگ‌های اختصاصی درگاه‌ها */
+.btn-zarinpal {
+    background: #ffc107; /* زرد زرین‌پال */
+    color: #000;
+}
+
+.btn-crypto {
+    background: #627eea; /* آبی ولت/اتریوم */
+    color: #fff;
+}
+
+.btn-paypal {
+    background: #003087; /* آبی پی‌پال */
+    color: #fff;
+}
+
+.payment-icon {
+    margin-left: 5px;
+    font-style: normal;
+}
+
+/* واکنش‌گرایی برای موبایل */
+@media (max-width: 768px) {
+    .products-grid, .product-card {
+        display: block;
+        width: 100%;
+    }
+    .product-card {
+        margin-bottom: 25px;
+    }
+}
         /* استایل اختصاصی برای لوگوی هیرو */
 .hero-logo {
     width: 100%;
