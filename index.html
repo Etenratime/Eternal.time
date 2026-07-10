@@ -477,6 +477,78 @@
             body { padding-bottom: 140px; }
         }
     </style>
+    /* تنظیمات ساختار هدر */
+.site-header {
+    width: 100%;
+    background: rgba(10, 10, 10, 0.95); /* مشکی شیشه‌ای و تیره */
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2); /* خط باریک طلایی زیر هدر */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    padding: 10px 0;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    direction: rtl; /* راست‌چین کردن برای چیدمان منظم فارسی */
+}
+
+/* بخش لوگو و نام متصل به آن */
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* تبدیل عکس بزرگ به یک مینی‌لوگوی شیک در نوار بالا */
+.nav-logo {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%; /* گرد کردن دور لوگو برای تمرکز روی المان وسط */
+    border: 1px solid #d4af37; /* حاشیه طلایی ظریف */
+    object-fit: cover;
+}
+
+/* استایل متن طلایی ETERNAL TIME در هدر */
+.brand-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #d4af37; /* رنگ طلایی کلاسیک */
+    letter-spacing: 2px;
+    font-family: 'Cinzel', 'Times New Roman', serif;
+    text-shadow: 0 0 8px rgba(212, 175, 55, 0.3);
+}
+
+/* منوی سمت دیگر هدر */
+.nav-menu a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-right: 20px;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.nav-menu a:hover {
+    color: #d4af37; /* تغییر رنگ به طلایی هنگام عبور ماوس */
+}
+
+/* واکنش‌گرایی برای موبایل */
+@media (max-width: 768px) {
+    .brand-name {
+        font-size: 15px;
+    }
+    .nav-logo {
+        width: 38px;
+        height: 38px;
+    }
+}
 </head>
 <body>
 
