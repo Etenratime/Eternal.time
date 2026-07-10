@@ -5,6 +5,85 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amertat Armaiti Universal Network</title>
     <style>
+        /* --- تنظیمات اختصاصی برای هدر روی گوشی (Mobile First) --- */
+
+/* اول، تنظیمات کلی هدر که روی همه صفحه‌ها اعمال می‌شه */
+.site-header {
+    width: 100%;
+    background: rgba(10, 10, 10, 0.95); /* مشکی شیشه‌ای تیره */
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    padding: 8px 0; /* فاصله کم برای هدر ظریف */
+    direction: rtl; /* راست‌چین */
+}
+
+/* این بخش جادوی متقارن کردنه */
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center; /* لوگو و نام رو دقیقاً وسط هدر قرار می‌ده */
+    align-items: center;
+    padding: 0 15px;
+}
+
+/* باکس لوگو و نام متصل به آن */
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* فاصله کم بین لوگو و متن */
+}
+
+/* --- کوچک کردن لوگوی بزرگ به یک مینی‌لوگوی ظریف در گوشی --- */
+.nav-logo {
+    width: 32px; /* ابعاد بسیار کوچک برای گوشی */
+    height: 32px;
+    border-radius: 50%; /* گرد کردن دور لوگو */
+    border: 1px solid #d4af37; /* حاشیه طلایی ظریف */
+    object-fit: cover;
+    display: block; /* برای جلوگیری از فاصله‌های ناخواسته */
+}
+
+/* استایل متن طلایی ETERNAL TIME در هدر روی گوشی */
+.brand-name {
+    font-size: 16px; /* اندازه فونت خوانا اما متناسب با لوگوی کوچک */
+    font-weight: bold;
+    color: #d4af37; /* رنگ طلایی */
+    letter-spacing: 1px;
+    font-family: 'Cinzel', 'Times New Roman', serif;
+    text-shadow: 0 0 5px rgba(212, 175, 55, 0.3);
+}
+
+/* پنهان کردن منو روی گوشی برای حفظ سادگی (می‌توانیم بعداً برگر بنویسیم) */
+.nav-menu {
+    display: none;
+}
+
+
+/* --- تنظیمات برای دسکتاپ و تبلت (بزرگتر از 768px) --- */
+@media (min-width: 769px) {
+    .header-container {
+        justify-content: space-between; /* در دسکتاپ، لوگو سمت راست و منو سمت چپ */
+    }
+
+    .nav-logo {
+        width: 45px; /* لوگوی کمی بزرگتر برای دسکتاپ */
+        height: 45px;
+    }
+
+    .brand-name {
+        font-size: 18px; /* فونت کمی بزرگتر */
+    }
+
+    .nav-menu {
+        display: flex; /* نمایش منو در دسکتاپ */
+    }
+}
+        
         /* باکس دربرگیرنده متن‌های هیرو */
 .hero-text {
     text-align: center;
