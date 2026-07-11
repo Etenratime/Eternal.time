@@ -1,294 +1,10 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amertat Armaiti Universal Network</title>
     <style>
-        /* --- تنظیمات اختصاصی برای هدر روی گوشی (Mobile First) --- */
-
-/* اول، تنظیمات کلی هدر که روی همه صفحه‌ها اعمال می‌شه */
-.site-header {
-    width: 100%;
-    background: rgba(10, 10, 10, 0.95); /* مشکی شیشه‌ای تیره */
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    padding: 8px 0; /* فاصله کم برای هدر ظریف */
-    direction: rtl; /* راست‌چین */
-}
-
-/* این بخش جادوی متقارن کردنه */
-.header-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center; /* لوگو و نام رو دقیقاً وسط هدر قرار می‌ده */
-    align-items: center;
-    padding: 0 15px;
-}
-
-/* باکس لوگو و نام متصل به آن */
-.logo-area {
-    display: flex;
-    align-items: center;
-    gap: 8px; /* فاصله کم بین لوگو و متن */
-}
-
-/* --- کوچک کردن لوگوی بزرگ به یک مینی‌لوگوی ظریف در گوشی --- */
-.nav-logo {
-    width: 32px; /* ابعاد بسیار کوچک برای گوشی */
-    height: 32px;
-    border-radius: 50%; /* گرد کردن دور لوگو */
-    border: 1px solid #d4af37; /* حاشیه طلایی ظریف */
-    object-fit: cover;
-    display: block; /* برای جلوگیری از فاصله‌های ناخواسته */
-}
-
-/* استایل متن طلایی ETERNAL TIME در هدر روی گوشی */
-.brand-name {
-    font-size: 16px; /* اندازه فونت خوانا اما متناسب با لوگوی کوچک */
-    font-weight: bold;
-    color: #d4af37; /* رنگ طلایی */
-    letter-spacing: 1px;
-    font-family: 'Cinzel', 'Times New Roman', serif;
-    text-shadow: 0 0 5px rgba(212, 175, 55, 0.3);
-}
-
-/* پنهان کردن منو روی گوشی برای حفظ سادگی (می‌توانیم بعداً برگر بنویسیم) */
-.nav-menu {
-    display: none;
-}
-
-
-/* --- تنظیمات برای دسکتاپ و تبلت (بزرگتر از 768px) --- */
-@media (min-width: 769px) {
-    .header-container {
-        justify-content: space-between; /* در دسکتاپ، لوگو سمت راست و منو سمت چپ */
-    }
-
-    .nav-logo {
-        width: 45px; /* لوگوی کمی بزرگتر برای دسکتاپ */
-        height: 45px;
-    }
-
-    .brand-name {
-        font-size: 18px; /* فونت کمی بزرگتر */
-    }
-
-    .nav-menu {
-        display: flex; /* نمایش منو در دسکتاپ */
-    }
-}
-        
-        /* باکس دربرگیرنده متن‌های هیرو */
-.hero-text {
-    text-align: center;
-    margin-top: 15px; /* ایجاد یک فاصله مناسب و استاندارد با لوگوی بالایی */
-    padding: 0 20px;
-}
-
-/* استایل کلمه ETERNAL TIME */
-.main-title {
-    font-size: 42px; /* ابعاد بزرگ و خوانا برای عنوان اصلی */
-    font-weight: 900;
-    color: #ffffff;
-    letter-spacing: 4px; /* ایجاد فاصله شیک بین حروف انگلیسی */
-    margin: 0 0 10px 0;
-    text-shadow: 0 0 15px rgba(255, 255, 255, 0.2); /* سایه ملایم برای درخشش متن */
-    text-transform: uppercase;
-}
-
-/* استایل شعار زیرین */
-.sub-title {
-    font-size: 16px;
-    color: #888888; /* رنگ خاکستری ملایم برای ایجاد تضاد بصری */
-    letter-spacing: 1px;
-    line-height: 1.6;
-    margin: 0 auto;
-    max-width: 600px; /* جلوگیری از کشیده شدن بیش از حد متن در مانیتورهای عمیق */
-}
-
-/* بهینه‌سازی خودکار برای گوشی‌های موبایل */
-@media (max-width: 768px) {
-    .main-title {
-        font-size: 28px; /* کوچک‌تر شدن عنوان در موبایل برای جلوگیری از شکستن خط */
-        letter-spacing: 2px;
-    }
-    
-    .sub-title {
-        font-size: 13px; /* جمع‌وجور شدن شعار در صفحه گوشی */
-        padding: 0 10px;
-    }
-}
-        /* استایل کلی بخش آکادمی */
-.academy-container {
-    padding: 60px 20px;
-    background: #0d0d0d; /* مشکی عمیق */
-    color: #ffffff;
-    font-family: 'Vazir', Tahoma, sans-serif;
-    direction: rtl; /* راست‌چین برای متن‌های فارسی */
-    text-align: center;
-}
-
-.section-header {
-    margin-bottom: 40px;
-}
-
-.academy-title {
-    font-size: 24px;
-    color: #00ffcc; /* سبز فسفری مدرن/فرکانسی */
-    margin-bottom: 10px;
-    letter-spacing: 1px;
-}
-
-.academy-subtitle {
-    font-size: 14px;
-    color: #888;
-}
-
-/* ساختار چیدمان کارت‌ها به صورت ردیفی و ستونی */
-.products-grid {
-    display: table;
-    width: 100%;
-    table-layout: fixed;
-    border-collapse: separate;
-    border-spacing: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.product-card {
-    display: table-cell;
-    background: #141414;
-    border: 1px solid #222;
-    border-radius: 12px;
-    padding: 30px 20px;
-    vertical-align: top;
-    position: relative;
-    transition: all 0.3s ease;
-}
-
-.product-card:hover {
-    border-color: #00ffcc;
-    transform: translateY(-5px);
-}
-
-/* پلاک محبوب‌ترین */
-.badge {
-    position: absolute;
-    top: -12px;
-    left: 20px;
-    background: #00ffcc;
-    color: #000;
-    padding: 4px 12px;
-    font-size: 11px;
-    font-weight: bold;
-    border-radius: 20px;
-}
-
-.product-card h3 {
-    font-size: 18px;
-    margin-bottom: 15px;
-    color: #fff;
-}
-
-.product-desc {
-    font-size: 13px;
-    color: #aaa;
-    line-height: 1.8;
-    min-height: 70px;
-    margin-bottom: 20px;
-}
-
-.price-tag {
-    font-size: 16px;
-    font-weight: bold;
-    color: #00ffcc;
-    margin-bottom: 25px;
-    background: rgba(0, 255, 204, 0.05);
-    padding: 8px;
-    border-radius: 6px;
-}
-
-/* استایل دکمه‌های پرداخت */
-.payment-buttons {
-    display: block;
-}
-
-.btn {
-    display: block;
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 10px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-size: 13px;
-    font-weight: bold;
-    transition: opacity 0.2s;
-    box-sizing: border-box;
-}
-
-.btn:hover {
-    opacity: 0.9;
-}
-
-/* رنگ‌های اختصاصی درگاه‌ها */
-.btn-zarinpal {
-    background: #ffc107; /* زرد زرین‌پال */
-    color: #000;
-}
-
-.btn-crypto {
-    background: #627eea; /* آبی ولت/اتریوم */
-    color: #fff;
-}
-
-.btn-paypal {
-    background: #003087; /* آبی پی‌پال */
-    color: #fff;
-}
-
-.payment-icon {
-    margin-left: 5px;
-    font-style: normal;
-}
-
-/* واکنش‌گرایی برای موبایل */
-@media (max-width: 768px) {
-    .products-grid, .product-card {
-        display: block;
-        width: 100%;
-    }
-    .product-card {
-        margin-bottom: 25px;
-    }
-}
-        /* استایل اختصاصی برای لوگوی هیرو */
-.hero-logo {
-    width: 100%;
-    max-width: 280px; /* حداکثر اندازه لوگو در دسکتاپ - می‌توانی این عدد را کم یا زیاد کنی */
-    height: auto; /* حفظ تناسب ابعاد عکس */
-    display: block;
-    margin: 0 auto 20px auto; /* وسط‌چین کردن لوگو و ایجاد فاصله با متن زیرین */
-    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.15)); /* یک سایه ملایم و شیک پشت لوگو */
-    transition: transform 0.3s ease; /* انیمیشن نرم برای حرکت */
-}
-
-/* افکت جذاب وقتی کاربر ماوس را روی لوگو می‌برد */
-.hero-logo:hover {
-    transform: scale(1.03); /* بزرگ شدن بسیار ملایم */
-}
-
-/* تنظیمات مخصوص گوشی‌های موبایل */
-@media (max-width: 768px) {
-    .hero-logo {
-        max-width: 200px; /* در گوشی‌های موبایل لوگو کمی کوچک‌تر نمایش داده می‌شود تا فیت شود */
-    }
-}
         :root {
             --bg-deep: #060112;
             --bg-space: #0d0422;
@@ -313,67 +29,283 @@
             color: var(--text-main);
             font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             margin: 0;
-            padding: 0;
+            padding: 80px 0 40px 0; /* ایجاد فضا از بالا برای اینکه محتوا زیر هدر ثابت نرود */
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             overflow-x: hidden;
         }
-
-        /* هدر کهکشانی */
-        header {
-            text-align: center;
-            padding: 50px 20px 30px 20px;
-            position: relative;
-
-        .logo-wrapper {
-            position: relative;
-            display: inline-block;
-            margin-bottom: 25px;
+        
+        /* اول، تنظیمات کلی هدر که روی همه صفحه‌ها اعمال می‌شه */
+        .site-header {
+            width: 100%;
+            background: rgba(10, 10, 10, 0.95); /* مشکی شیشه‌ای تیره */
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            padding: 8px 0; /* فاصله کم برای هدر ظریف */
+            direction: rtl; /* راست‌چین */
         }
 
-        .logo-wrapper::after {
-            content: '';
-            position: absolute;
-            top: -10px; left: -10px; right: -10px; bottom: -10px;
-            border-radius: 50%;
-            background: linear-gradient(45deg, var(--purple-glow), var(--gold-bright));
-            z-index: -1;
-            opacity: 0.6;
-            filter: blur(15px);
-            animation: pulseGlow 4s infinite alternate;
-        }
-
-        .logo-wrapper img {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            border: 3px solid rgba(255, 215, 0, 0.4);
-            object-fit: cover;
-        }
-
-        .slogan-box {
-            max-width: 850px;
+        /* این بخش جادوی متقارن کردنه */
+        .header-container {
+            max-width: 1200px;
             margin: 0 auto;
-            background: rgba(36, 11, 71, 0.4);
-            border: 1px solid rgba(188, 19, 254, 0.3);
-            padding: 20px 30px;
-            border-radius: 16px;
-            backdrop-filter: blur(8px);
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            display: flex;
+            justify-content: center; /* لوگو و نام رو دقیقاً وسط هدر قرار می‌ده */
+            align-items: center;
+            padding: 0 15px;
         }
 
-        .slogan-text {
-            font-size: 1.35rem;
-            font-weight: 700;
-            line-height: 1.8;
+        /* باکس لوگو و نام متصل به آن */
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 8px; /* فاصله کم بین لوگو و متن */
+        }
+
+        /* --- کوچک کردن لوگوی بزرگ به یک مینی‌لوگوی ظریف در گوشی --- */
+        .nav-logo {
+            width: 32px; /* ابعاد بسیار کوچک برای گوشی */
+            height: 32px;
+            border-radius: 50%; /* گرد کردن دور لوگو */
+            border: 1px solid #d4af37; /* حاشیه طلایی ظریف */
+            object-fit: cover;
+            display: block; /* برای جلوگیری از فاصله‌های ناخواسته */
+        }
+
+        /* استایل متن طلایی ETERNAL TIME در هدر روی گوشی */
+        .brand-name {
+            font-size: 16px; /* اندازه فونت خوانا اما متناسب با لوگوی کوچک */
+            font-weight: bold;
+            color: #d4af37; /* رنگ طلایی */
+            letter-spacing: 1px;
+            font-family: 'Cinzel', 'Times New Roman', serif;
+            text-shadow: 0 0 5px rgba(212, 175, 55, 0.3);
+        }
+
+        /* پنهان کردن منو روی گوشی برای حفظ سادگی */
+        .nav-menu {
+            display: none;
+        }
+
+        /* --- تنظیمات برای دسکتاپ و تبلت (بزرگتر از 768px) --- */
+        @media (min-width: 769px) {
+            .header-container {
+                justify-content: space-between; /* در دسکتاپ، لوگو سمت راست و منو سمت چپ */
+            }
+
+            .nav-logo {
+                width: 45px; /* لوگوی کمی بزرگتر برای دسکتاپ */
+                height: 45px;
+            }
+
+            .brand-name {
+                font-size: 18px; /* فونت کمی بزرگتر */
+            }
+
+            .nav-menu {
+                display: flex; /* نمایش منو در دسکتاپ */
+                gap: 20px;
+            }
+            
+            .nav-menu a {
+                color: #fff;
+                text-decoration: none;
+                font-size: 14px;
+            }
+            .nav-menu a:hover {
+                color: var(--gold-bright);
+            }
+        }
+                
+        /* باکس دربرگیرنده متن‌های هیرو */
+        .hero-text {
+            text-align: center;
+            margin-top: 15px; /* ایجاد یک فاصله مناسب و استاندارد با لوگوی بالایی */
+            padding: 0 20px;
+        }
+
+        /* استایل کلمه ETERNAL TIME */
+        .main-title {
+            font-size: 42px; /* ابعاد بزرگ و خوانا برای عنوان اصلی */
+            font-weight: 900;
+            color: #ffffff;
+            letter-spacing: 4px; /* ایجاد فاصله شیک بین حروف انگلیسی */
+            margin: 0 0 10px 0;
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.2); /* سایه ملایم برای درخشش متن */
+            text-transform: uppercase;
+        }
+        
+        /* استایل شعار زیرین */
+        .sub-title {
+            font-size: 16px;
+            color: #888888; /* رنگ خاکستری ملایم برای ایجاد تضاد بصری */
+            letter-spacing: 1px;
+            line-height: 1.6;
+            margin: 0 auto;
+            max-width: 600px; /* جلوگیری از کشیده شدن بیش از حد متن در مانیتورهای عمیق */
+        }
+
+        /* بهینه‌سازی خودکار برای گوشی‌های موبایل */
+        @media (max-width: 768px) {
+            .main-title {
+                font-size: 28px; /* کوچک‌تر شدن عنوان در موبایل برای جلوگیری از شکستن خط */
+                letter-spacing: 2px;
+            }
+            
+            .sub-title {
+                font-size: 13px; /* جمع‌وجور شدن شعار در صفحه گوشی */
+                padding: 0 10px;
+            }
+        /* استایل کلی بخش آکادمی */
+        .academy-container {
+            padding: 60px 20px;
+            background: rgba(13, 13, 13, 0.5); /* هماهنگ با تم تیره کپسول */
+            color: #ffffff;
+            font-family: 'Vazir', Tahoma, sans-serif;
+            direction: rtl; /* راست‌چین برای متن‌های فارسی */
+            text-align: center;
+            margin-top: 40px;
+            border-radius: 24px;
+            border: 1px solid rgba(188, 19, 254, 0.15);
+        }
+
+        .section-header {
+            margin-bottom: 40px;
+        }
+
+        .academy-title {
+            font-size: 24px;
+            color: var(--gold-bright); 
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .academy-subtitle {
+            font-size: 14px;
+            color: #888;
+        }
+
+        /* ساختار چیدمان کارت‌ها به صورت ردیفی و ستونی */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+                    }
+                    .product-card {
+            background: #141414;
+            border: 1px solid #222;
+            border-radius: 12px;
+            padding: 30px 20px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .product-card:hover {
+            border-color: var(--purple-glow);
+            transform: translateY(-5px);
+        }
+
+        /* پلاک محبوب‌ترین */
+        .badge {
+            position: absolute;
+            top: -12px;
+            left: 20px;
+            background: var(--purple-glow);
             color: #fff;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+            padding: 4px 12px;
+            font-size: 11px;
+            font-weight: bold;
+            border-radius: 20px;
         }
 
-        .slogan-highlight {
+        .product-card h3 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .product-desc {
+            font-size: 13px;
+            color: #aaa;
+            line-height: 1.8;
+            min-height: 70px;
+            margin-bottom: 20px;
+        }
+
+        .price-tag {
+            font-size: 16px;
+            font-weight: bold;
             color: var(--gold-bright);
-            text-shadow: 0 0 12px var(--gold-glow);
+            margin-bottom: 25px;
+            background: rgba(255, 215, 0, 0.05);
+            padding: 8px;
+            border-radius: 6px;
+        }
+
+        /* استایل دکمه‌های پرداخت */
+        .payment-buttons {
+            display: block;
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: bold;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+        /* رنگ‌های اختصاصی درگاه‌ها */
+        .btn-zarinpal {
+            background: #ffc107; /* زرد زرین‌پال */
+            color: #000;
+        }
+
+        .btn-crypto {
+            background: #627eea; /* آبی ولت/اتریوم */
+            color: #fff;
+        }
+
+        .btn-paypal {
+            background: #003087; /* آبی پی‌پال */
+            color: #fff;
+        }
+
+        .payment-icon {
+            margin-left: 5px;
+            font-style: normal;
+        }
+
+        /* استایل اختصاصی برای لوگوی هیرو */
+        .hero-logo {
+            width: 100%;
+            max-width: 280px; 
+            height: auto; 
+            display: block;
+            margin: 40px auto 20px auto; 
+            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.15)); 
+        }
+
+        .hero-logo:hover {
+            transform: scale(1.03);
         }
 
         /* سیستم تب بار پیشرفته */
@@ -390,7 +322,7 @@
             border: 1px solid rgba(188, 19, 254, 0.2);
             box-shadow: inset 0 0 20px rgba(188, 19, 254, 0.1);
         }
-        }
+
         .portal-btn {
             background: transparent;
             border: none;
@@ -436,8 +368,7 @@
         .content-universe {
             max-width: 850px;
             width: 90%;
-            margin: 0 auto 120px auto;
-            flex: 1;
+            margin: 0 auto 60px auto;
         }
 
         .dimension-panel {
@@ -449,14 +380,11 @@
             border-radius: 24px;
             backdrop-filter: blur(12px);
             box-shadow: 0 20px 50px rgba(0,0,0,0.6);
-            animation: superFade 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
         }
 
         .dimension-panel.active {
             display: block;
         }
-
-                }
 
         h2 {
             color: var(--gold-bright);
@@ -475,7 +403,7 @@
             color: #d1c4e9;
         }
 
-        /* ابزار صوتی خفن */
+        /* ابزار صوتی */
         .sonic-vault {
             background: linear-gradient(145deg, #180936, #0d0422);
             border: 2px dashed rgba(188, 19, 254, 0.4);
@@ -489,12 +417,6 @@
             border-color: var(--gold-bright);
             box-shadow: 0 0 25px rgba(188, 19, 254, 0.2);
             background: #1d0b42;
-        }
-
-        .sonic-vault icon {
-            font-size: 3rem;
-            display: block;
-            margin-bottom: 15px;
         }
 
         /* کارت‌های آموزشی مدرن */
@@ -511,9 +433,8 @@
             padding: 25px;
             border-radius: 16px;
             border-right: 5px solid var(--purple-glow);
-        }
-
-        .nebula-card:hover {
+            }
+            .nebula-card:hover {
             border-right-color: var(--gold-bright);
             background: rgba(36, 11, 71, 0.5);
             transform: translateX(-5px);
@@ -529,10 +450,8 @@
             background: #03000a;
             text-align: center;
             padding: 25px;
-            position: fixed;
-            bottom: 0; left: 0; width: 100%;
+            margin-top: auto;
             border-top: 1px solid rgba(188, 19, 254, 0.3);
-            z-index: 999;
             box-shadow: 0 -10px 30px rgba(0,0,0,0.8);
         }
 
@@ -545,44 +464,52 @@
             text-shadow: 0 0 12px rgba(255, 215, 0, 0.5);
         }
 
-        @keyframes pulseGlow {
-            from { transform: scale(1); opacity: 0.5; }
-            to { transform: scale(1.03); opacity: 0.8; filter: blur(20px); }
-        }
-
+        /* واکنش‌گرایی برای موبایل */
         @media (max-width: 768px) {
-            .navigation-universe { flex-direction: column; border-radius: 20px; }
-            .nebula-grid { grid-template-columns: 1fr; }
-            body { padding-bottom: 140px; }
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            .product-card {
+                margin-bottom: 25px;
+            }
+            .hero-logo {
+                max-width: 200px;
+            }
+            .navigation-universe { 
+                flex-direction: column; 
+                border-radius: 20px; 
+            }
+            .nebula-grid { 
+                grid-template-columns: 1fr; 
+            }
         }
     </style>
 </head>
 <body>
 
+    <!-- هدر متقارن با لوگوی مینیاتوری گیت‌هاب -->
     <header class="site-header">
-    <div class="header-container">
-        <div class="logo-area">
-            <!-- فایل لوگوی جدید که آپلود کردی -->
-            <!-- کد اصلاح شده با اسم طولانی -->
-<img src="Gemini_Generated_Image_mwhlm3mwhlm3mwhl.png" > alt="Eternal Time Logo" class="nav-logo">
-            <span class="brand-name">ETERNAL TIME</span>
+        <div class="header-container">
+            <div class="logo-area">
+                <img src="Gemini_Generated_Image_mwhlm3mwhlm3mwhl.png" alt="Eternal Time Logo" class="nav-logo">
+                <span class="brand-name">ETERNAL TIME</span>
+            </div>
+            
+            <nav class="nav-menu">
+                <a href="#hero-logo-section">خانه</a>
+                <a href="#academy-section">آکادمی</a>
+            </nav>
         </div>
-        
-        <!-- منوی ناوبری سایت -->
-        <nav class="nav-menu">
-            <a href="#hero-logo-section">خانه</a>
-            <a href="#academy-section">آکادمی</a>
-            <a href="#contact">تماس</a>
-        </nav>
-    </div>
-</header>
+    </header>
 
+    <!-- بخش میانی منوی تب بار کپسولی -->
     <nav class="navigation-universe">
         <button class="portal-btn active" onclick="shiftDimension(event, 'manifest-core')">💥 مانیفست</button>
         <button class="portal-btn" onclick="shiftDimension(event, 'sonic-core')">🎵 موزیک و پادکست</button>
         <button class="portal-btn" onclick="shiftDimension(event, 'nexus-core')">👁️ آموزش‌ها</button>
     </nav>
 
+    <!-- بخش اصلی کپسول‌های اطلاعاتی -->
     <main class="content-universe">
         
         <div id="manifest-core" class="dimension-panel active">
@@ -623,10 +550,85 @@
 
     </main>
 
+    <!-- بخش اختصاصی برای نمایش لوگوی ابدی وسط صفحه -->
+    <section id="hero-logo-section">
+        <div class="hero-content">
+            <img src="IMG_20260607_170051_039.webp" alt="Immortal Suns Network - Frequency One" class="hero-logo">
+            
+            <div class="hero-text">
+                <h1 class="main-title">ETERNAL TIME</h1>
+                <p class="sub-title">Exploring the depths of consciousness and frequency.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- بخش فروشگاه و کارت‌های آکادمی -->
+    <section id="academy-section" class="academy-container">
+        <div class="section-header">
+            <h2 class="academy-title">آکادمی و فروشگاه اِترنال تایم</h2>
+            <p class="academy-subtitle">دسترسی آنی به دوره‌های تخصصی ورزشی، تنظیم فرکانس و آثارهای صوتی</p>
+        </div>
+
+        <div class="products-grid">
+            
+            <!-- کارت محصول اول: پکیج ورزشی -->
+            <div class="product-card">
+                <div class="badge">محبوب‌ترین</div>
+                <h3>دوره تخصصی آمادگی جسمانی و ریکاوری</h3>
+                <p class="product-desc">برنامه تمرینی جامع، متدهای ماساژ درمانی و اصول بیومکانیک بدن برای رسیدن به آمادگی ۱۰۰٪.</p>
+                <div class="price-tag">۴۹۰,۰۰۰ تومان / 15 USDT</div>
+                
+                <div class="payment-buttons">
+                    <a href="https://zarinp.al/YOUR_LINK_HERE" target="_blank" class="btn btn-zarinpal">
+                        <i class="payment-icon">💳</i> پرداخت ریالی (زرین‌پال)
+                    </a>
+                    <a href="https://nowpayments.io/payment?YOUR_ID" target="_blank" class="btn btn-crypto">
+                        <i class="payment-icon">🪙</i> پرداخت با ارز دیجیتال (تتر)
+                    </a>
+                </div>
+            </div>
+
+            <!-- کارت محصول دوم: آکادمی موسیقی -->
+            <div class="product-card">
+                <h3>دوره تنظیم، آرنجمنت و میکس (FL Studio)</h3>
+                <p class="product-desc">آموزش گام به گام ساخت ملودی، مدیریت فرکانس‌ها و ساختار شعر و لیریکس در موسیقی مدرن.</p>
+                <div class="price-tag">۷۹۰,۰۰۰ تومان / 25 USDT</div>
+                
+                <div class="payment-buttons">
+                    <a href="https://zarinp.al/YOUR_LINK_HERE" target="_blank" class="btn btn-zarinpal">
+                        <i class="payment-icon">💳</i> پرداخت ریالی (زرین‌پال)
+                    </a>
+                    <a href="https://nowpayments.io/payment?YOUR_ID" target="_blank" class="btn btn-crypto">
+                        <i class="payment-icon">🪙</i> پرداخت ارزی / کریپتو
+                    </a>
+                </div>
+            </div>
+
+            <!-- کارت محصول دوم: حمایت از آثار هنری -->
+            <div class="product-card">
+                <h3>دسترسی ویژه به آلبوم ترانه‌ها و دکلمه‌ها</h3>
+                <p class="product-desc">دانلود با کیفیت استودیویی تمام اشعار، ملودی‌ها و وکال‌های اختصاصی اِترنال تایم.</p>
+                <div class="price-tag">۱۹۰,۰۰۰ تومان / 5 USD</div>
+                
+                <div class="payment-buttons">
+                    <a href="https://zarinp.al/YOUR_LINK_HERE" target="_blank" class="btn btn-zarinpal">
+                        <i class="payment-icon">💳</i> زرین‌لینک ریالی
+                    </a>
+                    <a href="https://www.paypal.com/cgi-bin/webscr?YOUR_BUTTON_CODE" target="_blank" class="btn btn-paypal">
+                        <i class="payment-icon">🅿️</i> پرداخت بین‌المللی PayPal
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- فوتر انتهای صفحه -->
     <footer>
         <div class="matrix-text">time is hallucinations I can control it</div>
     </footer>
 
+    <!-- اسکریپت جاوااسکریپت تب‌ها -->
     <script>
         function shiftDimension(evt, dimensionId) {
             const panels = document.getElementsByClassName("dimension-panel");
@@ -645,79 +647,5 @@
     </script>
 </body>
 </html>
-<!-- شروع بخش اختصاصی برای نمایش لوگوی ابدی -->
-<section id="hero-logo-section">
-    <div class="hero-content">
-        <!-- اسم دقیق فایل شما در گیت‌هاب اینجا قرار گرفت -->
-        <img src="IMG_20260607_170051_039.webp" alt="Immortal Suns Network - Frequency One" class="hero-logo">
+        }
         
-        <div class="hero-text">
-            <h1 class="main-title">ETERNAL TIME</h1>
-            <p class="sub-title">Exploring the depths of consciousness and frequency.</p>
-        </div>
-    </div>
-</section>
-<!-- پایان بخش -->
-<!-- ==================== SECTION: ACADEMY & PAYMENTS ==================== -->
-<section id="academy-section" class="academy-container">
-    <div class="section-header">
-        <h2 class="academy-title">آکادمی و فروشگاه اِترنال تایم</h2>
-        <p class="academy-subtitle">دسترسی آنی به دوره‌های تخصصی ورزشی، تنظیم فرکانس و آثارهای صوتی</p>
-    </div>
-
-    <div class="products-grid">
-        
-        <!-- کارت محصول اول: پکیج ورزشی -->
-        <div class="product-card">
-            <div class="badge">محبوب‌ترین</div>
-            <h3>دوره تخصصی آمادگی جسمانی و ریکاوری</h3>
-            <p class="product-desc">برنامه تمرینی جامع، متدهای ماساژ درمانی و اصول بیومکانیک بدن برای رسیدن به آمادگی ۱۰۰٪.</p>
-            <div class="price-tag">۴۹۰,۰۰۰ تومان / 15 USDT</div>
-            
-            <div class="payment-buttons">
-                <!-- اتصال به زرین لینک ریالی -->
-                <a href="https://zarinp.al/YOUR_LINK_HERE" target="_blank" class="btn btn-zarinpal">
-                    <i class="payment-icon">💳</i> پرداخت ریالی (زرین‌پال)
-                </a>
-                <!-- اتصال به کریپتو (مثلاً لینک NOWPayments یا آدرس مستقیم) -->
-                <a href="https://nowpayments.io/payment?YOUR_ID" target="_blank" class="btn btn-crypto">
-                    <i class="payment-icon">🪙</i> پرداخت با ارز دیجیتال (تتر)
-                </a>
-            </div>
-        </div>
-
-        <!-- کارت محصول دوم: آکادمی موسیقی -->
-        <div class="product-card">
-            <h3>دوره تنظیم، آرنجمنت و میکس (FL Studio)</h3>
-            <p class="product-desc">آموزش گام به گام ساخت ملودی، مدیریت فرکانس‌ها و ساختار شعر و لیریکس در موسیقی مدرن.</p>
-            <div class="price-tag">۷۹۰,۰۰۰ تومان / 25 USDT</div>
-            
-            <div class="payment-buttons">
-                <a href="https://zarinp.al/YOUR_LINK_HERE" target="_blank" class="btn btn-zarinpal">
-                    <i class="payment-icon">💳</i> پرداخت ریالی (زرین‌پال)
-                </a>
-                <a href="https://nowpayments.io/payment?YOUR_ID" target="_blank" class="btn btn-crypto">
-                    <i class="payment-icon">🪙</i> پرداخت ارزی / کریپتو
-                </a>
-            </div>
-        </div>
-
-        <!-- کارت محصول سوم: حمایت از آثار هنری -->
-        <div class="product-card">
-            <h3>دسترسی ویژه به آلبوم ترانه‌ها و دکلمه‌ها</h3>
-            <p class="product-desc">دانلود با کیفیت استودیویی تمام اشعار، ملودی‌ها و وکال‌های اختصاصی اِترنال تایم.</p>
-            <div class="price-tag">۱۹۰,۰۰۰ تومان / 5 USD</div>
-            
-            <div class="payment-buttons">
-                <a href="https://zarinp.al/YOUR_LINK_HERE" target="_blank" class="btn btn-zarinpal">
-                    <i class="payment-icon">💳</i> زرین‌لینک ریالی
-                </a>
-                <!-- دکمه بین‌المللی پی‌پال -->
-                <a href="https://www.paypal.com/cgi-bin/webscr?YOUR_BUTTON_CODE" target="_blank" class="btn btn-paypal">
-                    <i class="payment-icon">🅿️</i> پرداخت بین‌المللی PayPal
-                </a>
-            </div>
-        </div>
-
-    </div>
-</section>
