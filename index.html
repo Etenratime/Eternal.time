@@ -22,116 +22,85 @@
 
         body {
             background-color: var(--bg-deep);
-            background-image: 
+         background-image: 
                 radial-gradient(circle at 20% 30%, rgba(188, 19, 254, 0.15) 0%, transparent 40%),
                 radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.08) 0%, transparent 45%),
                 linear-gradient(to bottom, var(--bg-deep), var(--bg-space));
             color: var(--text-main);
             font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             margin: 0;
-            padding: 80px 0 40px 0; /* ایجاد فضا از بالا برای اینکه محتوا زیر هدر ثابت نرود */
+            padding: 80px 0 40px 0;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             overflow-x: hidden;
         }
         
-        /* اول، تنظیمات کلی هدر که روی همه صفحه‌ها اعمال می‌شه */
         .site-header {
             width: 100%;
-            background: rgba(10, 10, 10, 0.95); /* مشکی شیشه‌ای تیره */
+            background: rgba(10, 10, 10, 0.95);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid rgba(212, 175, 55, 0.2);
             position: fixed;
             top: 0;
             left: 0;
             z-index: 1000;
-            padding: 8px 0; /* فاصله کم برای هدر ظریف */
-            direction: rtl; /* راست‌چین */
+            padding: 8px 0;
+            direction: rtl;
         }
-
-        /* این بخش جادوی متقارن کردنه */
-        .header-container {
+.header-container {
             max-width: 1200px;
             margin: 0 auto;
             display: flex;
-            justify-content: center; /* لوگو و نام رو دقیقاً وسط هدر قرار می‌ده */
+            justify-content: center;
             align-items: center;
             padding: 0 15px;
         }
-<div class="custom-player">
-  <div class="track-info">
-    <div class="track-title">نام موزیک</div>
-    <div class="artist-name">نام خواننده / اثر</div>
-  </div>
 
-  <!-- فایل صوتی اصلی -->
-  <audio id="audio-element" src="your-music.mp3"></audio>
-
-  <!-- کنترل‌ها -->
-  <div class="player-controls">
-    <button id="play-btn" class="control-btn">▶</button>
-  </div>
-
-  <!-- نوار پیشرفت -->
-  <div class="progress-container" id="progress-container">
-    <div class="progress-bar" id="progress-bar"></div>
-  </div>
-
-  <!-- زمان -->
-  <div class="time-info">
-    <span id="current-time">0:00</span> / <span id="duration">0:00</span>
-  </div>
-</div>
-        /* باکس لوگو و نام متصل به آن */
         .logo-area {
             display: flex;
             align-items: center;
-            gap: 8px; /* فاصله کم بین لوگو و متن */
+            gap: 8px;
         }
 
-        /* --- کوچک کردن لوگوی بزرگ به یک مینی‌لوگوی ظریف در گوشی --- */
         .nav-logo {
-            width: 32px; /* ابعاد بسیار کوچک برای گوشی */
+            width: 32px;
             height: 32px;
-            border-radius: 50%; /* گرد کردن دور لوگو */
-            border: 1px solid #d4af37; /* حاشیه طلایی ظریف */
+            border-radius: 50%;
+            border: 1px solid #d4af37;
             object-fit: cover;
-            display: block; /* برای جلوگیری از فاصله‌های ناخواسته */
+            display: block;
         }
 
-        /* استایل متن طلایی ETERNAL TIME در هدر روی گوشی */
         .brand-name {
-            font-size: 16px; /* اندازه فونت خوانا اما متناسب با لوگوی کوچک */
+            font-size: 16px;
             font-weight: bold;
-            color: #d4af37; /* رنگ طلایی */
+            color: #d4af37;
             letter-spacing: 1px;
             font-family: 'Cinzel', 'Times New Roman', serif;
             text-shadow: 0 0 5px rgba(212, 175, 55, 0.3);
         }
 
-        /* پنهان کردن منو روی گوشی برای حفظ سادگی */
         .nav-menu {
             display: none;
         }
 
-        /* --- تنظیمات برای دسکتاپ و تبلت (بزرگتر از 768px) --- */
         @media (min-width: 769px) {
             .header-container {
-                justify-content: space-between; /* در دسکتاپ، لوگو سمت راست و منو سمت چپ */
+                justify-content: space-between;
             }
 
             .nav-logo {
-                width: 45px; /* لوگوی کمی بزرگتر برای دسکتاپ */
+                width: 45px;
                 height: 45px;
             }
 
             .brand-name {
-                font-size: 18px; /* فونت کمی بزرگتر */
+                font-size: 18px;
             }
 
             .nav-menu {
-                display: flex; /* نمایش منو در دسکتاپ */
+                display: flex;
                 gap: 20px;
             }
             
@@ -145,52 +114,48 @@
             }
         }
                 
-        /* باکس دربرگیرنده متن‌های هیرو */
         .hero-text {
             text-align: center;
-            margin-top: 15px; /* ایجاد یک فاصله مناسب و استاندارد با لوگوی بالایی */
+            margin-top: 15px;
             padding: 0 20px;
         }
 
-        /* استایل کلمه ETERNAL TIME */
         .main-title {
-            font-size: 42px; /* ابعاد بزرگ و خوانا برای عنوان اصلی */
+            font-size: 42px;
             font-weight: 900;
             color: #ffffff;
-            letter-spacing: 4px; /* ایجاد فاصله شیک بین حروف انگلیسی */
+            letter-spacing: 4px;
             margin: 0 0 10px 0;
-            text-shadow: 0 0 15px rgba(255, 255, 255, 0.2); /* سایه ملایم برای درخشش متن */
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
             text-transform: uppercase;
         }
-        
-        /* استایل شعار زیرین */
         .sub-title {
             font-size: 16px;
-            color: #888888; /* رنگ خاکستری ملایم برای ایجاد تضاد بصری */
+            color: #888888;
             letter-spacing: 1px;
             line-height: 1.6;
             margin: 0 auto;
-            max-width: 600px; /* جلوگیری از کشیده شدن بیش از حد متن در مانیتورهای عمیق */
+            max-width: 600px;
         }
 
-        /* بهینه‌سازی خودکار برای گوشی‌های موبایل */
         @media (max-width: 768px) {
             .main-title {
-                font-size: 28px; /* کوچک‌تر شدن عنوان در موبایل برای جلوگیری از شکستن خط */
+                font-size: 28px;
                 letter-spacing: 2px;
             }
             
             .sub-title {
-                font-size: 13px; /* جمع‌وجور شدن شعار در صفحه گوشی */
+                font-size: 13px;
                 padding: 0 10px;
             }
-        /* استایل کلی بخش آکادمی */
+        }
+
         .academy-container {
             padding: 60px 20px;
-            background: rgba(13, 13, 13, 0.5); /* هماهنگ با تم تیره کپسول */
+            background: rgba(13, 13, 13, 0.5);
             color: #ffffff;
             font-family: 'Vazir', Tahoma, sans-serif;
-            direction: rtl; /* راست‌چین برای متن‌های فارسی */
+            direction: rtl;
             text-align: center;
             margin-top: 40px;
             border-radius: 24px;
@@ -213,15 +178,15 @@
             color: #888;
         }
 
-        /* ساختار چیدمان کارت‌ها به صورت ردیفی و ستونی */
         .products-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 20px;
             max-width: 1200px;
             margin: 0 auto;
-                    }
-                    .product-card {
+        }
+
+        .product-card {
             background: #141414;
             border: 1px solid #222;
             border-radius: 12px;
@@ -237,13 +202,12 @@
             transform: translateY(-5px);
         }
 
-        /* پلاک محبوب‌ترین */
         .badge {
             position: absolute;
             top: -12px;
             left: 20px;
             background: var(--purple-glow);
-            color: #fff;
+         color: #fff;
             padding: 4px 12px;
             font-size: 11px;
             font-weight: bold;
@@ -274,7 +238,6 @@
             border-radius: 6px;
         }
 
-        /* استایل دکمه‌های پرداخت */
         .payment-buttons {
             display: block;
         }
@@ -296,28 +259,21 @@
             opacity: 0.9;
         }
 
-        /* رنگ‌های اختصاصی درگاه‌ها */
         .btn-zarinpal {
-            background: #ffc107; /* زرد زرین‌پال */
+            background: #ffc107;
             color: #000;
         }
 
         .btn-crypto {
-            background: #627eea; /* آبی ولت/اتریوم */
+            background: #627eea;
             color: #fff;
         }
-
-        .btn-paypal {
-            background: #003087; /* آبی پی‌پال */
-            color: #fff;
-        }
-
-        .payment-icon {
+     
+.payment-icon {
             margin-left: 5px;
             font-style: normal;
         }
 
-        /* استایل اختصاصی برای لوگوی هیرو */
         .hero-logo {
             width: 100%;
             max-width: 280px; 
@@ -331,7 +287,6 @@
             transform: scale(1.03);
         }
 
-        /* سیستم تب بار پیشرفته */
         .navigation-universe {
             display: flex;
             justify-content: center;
@@ -386,9 +341,7 @@
             opacity: 1;
             transform: scale(1);
         }
-
-        /* ایستگاه‌های محتوا */
-        .content-universe {
+     .content-universe {
             max-width: 850px;
             width: 90%;
             margin: 0 auto 60px auto;
@@ -426,7 +379,6 @@
             color: #d1c4e9;
         }
 
-        /* ابزار صوتی */
         .sonic-vault {
             background: linear-gradient(145deg, #180936, #0d0422);
             border: 2px dashed rgba(188, 19, 254, 0.4);
@@ -441,9 +393,7 @@
             box-shadow: 0 0 25px rgba(188, 19, 254, 0.2);
             background: #1d0b42;
         }
-
-        /* کارت‌های آموزشی مدرن */
-        .nebula-grid {
+     .nebula-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 20px;
@@ -456,8 +406,9 @@
             padding: 25px;
             border-radius: 16px;
             border-right: 5px solid var(--purple-glow);
-            }
-            .nebula-card:hover {
+        }
+
+        .nebula-card:hover {
             border-right-color: var(--gold-bright);
             background: rgba(36, 11, 71, 0.5);
             transform: translateX(-5px);
@@ -468,7 +419,78 @@
             color: #fff;
         }
 
-        /* فوتر جاودان عمیق */
+        /* --- استایل موزیک پلییر اختصاصی شیشه‌ای --- */
+        .custom-player {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 20px;
+            padding: 20px;
+            max-width: 380px;
+            margin: 20px auto;
+            color: #fff;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+            text-align: center;
+            direction: rtl;
+        }
+
+        .track-title {
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            color: var(--gold-bright);
+        }
+
+        .artist-name {
+            font-size: 0.85rem;
+            opacity: 0.8;
+            margin-bottom: 15px;
+        }
+
+        .control-btn {
+            background: rgba(188, 19, 254, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #fff;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px auto;
+        }
+
+        .control-btn:hover {
+            background: var(--purple-glow);
+            transform: scale(1.08);
+        }
+
+        .progress-container {
+            background: rgba(255, 255, 255, 0.15);
+            height: 6px;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-bottom: 8px;
+            overflow: hidden;
+        }
+.progress-bar {
+            background: var(--gold-bright);
+            height: 100%;
+            width: 0%;
+            border-radius: 10px;
+            transition: width 0.1s linear;
+        }
+
+        .time-info {
+            font-size: 0.75rem;
+            opacity: 0.7;
+            direction: ltr;
+        }
+
         footer {
             background: #03000a;
             text-align: center;
@@ -487,7 +509,6 @@
             text-shadow: 0 0 12px rgba(255, 215, 0, 0.5);
         }
 
-        /* واکنش‌گرایی برای موبایل */
         @media (max-width: 768px) {
             .products-grid {
                 grid-template-columns: 1fr;
@@ -506,90 +527,17 @@
                 grid-template-columns: 1fr; 
             }
         }
-    </style
-     .custom-player {
-  background: rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 20px;
-  padding: 20px;
-  max-width: 350px;
-  margin: 20px auto;
-  color: #fff;
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
-  text-align: center;
-  font-family: sans-serif;
-  direction: rtl;
-}
-
-.track-title {
-  font-weight: bold;
-  font-size: 1.1rem;
-  margin-bottom: 5px;
-}
-
-.artist-name {
-  font-size: 0.85rem;
-  opacity: 0.8;
-  margin-bottom: 15px;
-}
-
-.control-btn {
-  background: rgba(255, 255, 255, 0.25);
-  border: none;
-  color: #fff;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  font-size: 1.2rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 15px auto;
-}
-
-.control-btn:hover {
-  background: rgba(255, 255, 255, 0.4);
-  transform: scale(1.05);
-}
-
-.progress-container {
-  background: rgba(255, 255, 255, 0.2);
-  height: 6px;
-  border-radius: 10px;
-  cursor: pointer;
-  margin-bottom: 8px;
-  overflow: hidden;
-}
-
-.progress-bar {
-  background: #fff;
-  height: 100%;
-  width: 0%;
-  border-radius: 10px;
-  transition: width 0.1s linear;
-}
-
-.time-info {
-  font-size: 0.75rem;
-  opacity: 0.7;
-  direction: ltr;
-}
+    </style>
 </head>
-<bo
-}
+<body>
 
-    <!-- هدر متقارن با لوگوی مینیاتوری گیت‌هاب -->
+    <!-- هدر -->
     <header class="site-header">
         <div class="header-container">
             <div class="logo-area">
                 <img src="Gemini_Generated_Image_mwhlm3mwhlm3mwhl.png" alt="Eternal Time Logo" class="nav-logo">
                 <span class="brand-name">ETERNAL TIME</span>
             </div>
-            
             <nav class="nav-menu">
                 <a href="#hero-logo-section">خانه</a>
                 <a href="#academy-section">آکادمی</a>
@@ -597,36 +545,63 @@
         </div>
     </header>
 
-    <!-- بخش میانی منوی تب بار کپسولی -->
+    <!-- تب بار کپسولی -->
     <nav class="navigation-universe">
         <button class="portal-btn active" onclick="shiftDimension(event, 'manifest-core')">💥 مانیفست</button>
         <button class="portal-btn" onclick="shiftDimension(event, 'sonic-core')">🎵 موزیک و پادکست</button>
         <button class="portal-btn" onclick="shiftDimension(event, 'nexus-core')">👁️ آموزش‌ها</button>
     </nav>
 
-    <!-- بخش اصلی کپسول‌های اطلاعاتی -->
+    <!-- بخش اصلی محتوا -->
     <main class="content-universe">
         
         <div id="manifest-core" class="dimension-panel active">
             <h2>✨ مانیفست شبکه جهانی امرداد آرمیتی</h2>
             <p>
-                به کانون همگرایی فرکانس‌های برتر خوش آمدید. این فضا فراتر از یک وب‌سایت، یک پرواز جمعی به سوی بیداری معنوی، صلح درون و ادراک ساختارهای کیهانی است. ما اینجا هستیم تا با تلفیق هنر ناب، فرکانس‌های صوتی عمیق و دانش اصیل، میدان انرژی جهان پیرامونمان را ارتقا دهیم. بگذارید نور آگاهی بتابد.
+                به کانون همگرایی فرکانس‌های برتر خوش آمدید. این فضا فراتر از یک وب‌سایت، یک پرواز جمعی به سوی بیداری معنوی، صلح درون و ادراک ساختارهای کیهانی است.
             </p>
         </div>
 
+        <!-- تب موزیک و پادکست (پلیرها اینجا قرار گرفتند) -->
         <div id="sonic-core" class="dimension-panel">
             <h2>🔮 پورتال ارتعاشات صوتی</h2>
+            
             <div class="sonic-vault" onclick="document.getElementById('cosmicAudio').click()">
                 <div>🌌</div>
                 <p style="margin: 10px 0 0 0; font-weight: bold;">فایل موزیک یا پادکست خود را جهت بارگذاری انتخاب کنید</p>
                 <input type="file" id="cosmicAudio" accept="audio/*" style="display:none;">
             </div>
             
-            <h3 style="margin-top: 30px; color: var(--gold-bright);">🎚️ پلیر پخش فرکانس</h3>
-            <div style="background: rgba(0,0,0,0.4); padding: 15px; border-radius: 12px; display: flex; align-items: center; justify-content: space-between; border: 1px solid rgba(188,19,254,0.2);">
-                <span>آماده‌سازی لایه صوتی...</span>
-                <audio controls style="height: 32px;"></audio>
+            <h3 style="margin-top: 30px; color: var(--gold-bright); text-align: center;">🎚️ پلیر اختصاصی Magic Seed</h3>
+            
+            <!-- پلیر اختصاصی HTML5 -->
+            <div class="custom-player">
+                <div class="track-info">
+                    <div class="track-title">Magic Seed</div>
+                    <div class="artist-name">Swami Coffee Ft. Omid Pakdel</div>
+                </div>
+
+                <!-- 👈 آدرس فایل MP3 مستقیم خود را به جای song.mp3 قرار بده -->
+                <audio id="audio-element" src="song.mp3"></audio>
+
+                <div class="player-controls">
+                 <button id="play-btn" class="control-btn">▶</button>
+                </div>
+
+                <div class="progress-container" id="progress-container">
+                    <div class="progress-bar" id="progress-bar"></div>
+                </div>
+
+                <div class="time-info">
+                    <span id="current-time">0:00</span> / <span id="duration">0:00</span>
+                </div>
             </div>
+
+            <!-- امبد رسمی ساندکلاود (برای پخش مستقیم از ساندکلاود) -->
+            <h3 style="margin-top: 30px; color: var(--gold-bright); text-align: center;">🎧 پخش مستقیم از SoundCloud</h3>
+            <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" 
+                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/swami-coffee2022/magic-seed-featomid-pakdel&color=%23bc13fe&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true">
+            </iframe>
         </div>
 
         <div id="nexus-core" class="dimension-panel">
@@ -644,12 +619,9 @@
         </div>
 
     </main>
-
-    <!-- بخش اختصاصی برای نمایش لوگوی ابدی وسط صفحه -->
-    <section id="hero-logo-section">
+ <section id="hero-logo-section">
         <div class="hero-content">
             <img src="IMG_20260607_170051_039.webp" alt="Immortal Suns Network - Frequency One" class="hero-logo">
-            
             <div class="hero-text">
                 <h1 class="main-title">ETERNAL TIME</h1>
                 <p class="sub-title">Exploring the depths of consciousness and frequency.</p>
@@ -657,7 +629,7 @@
         </div>
     </section>
 
-    <!-- بخش فروشگاه و کارت‌های آکادمی -->
+    <!-- آکادمی و فروشگاه -->
     <section id="academy-section" class="academy-container">
         <div class="section-header">
             <h2 class="academy-title">آکادمی و فروشگاه اِترنال تایم</h2>
@@ -665,65 +637,44 @@
         </div>
 
         <div class="products-grid">
-            
-            <!-- کارت محصول اول: پکیج ورزشی -->
             <div class="product-card">
                 <div class="badge">محبوب‌ترین</div>
                 <h3>دوره تخصصی آمادگی جسمانی و ریکاوری</h3>
                 <p class="product-desc">برنامه تمرینی جامع، متدهای ماساژ درمانی و اصول بیومکانیک بدن برای رسیدن به آمادگی ۱۰۰٪.</p>
                 <div class="price-tag">۴۹۰,۰۰۰ تومان / 15 USDT</div>
-                
                 <div class="payment-buttons">
-                    <a href="https://zarinp.al/YOUR_LINK_HERE" target="_blank" class="btn btn-zarinpal">
-                        <i class="payment-icon">💳</i> پرداخت ریالی (زرین‌پال)
-                    </a>
-                    <a href="https://nowpayments.io/payment?YOUR_ID" target="_blank" class="btn btn-crypto">
-                        <i class="payment-icon">🪙</i> پرداخت با ارز دیجیتال (تتر)
-                    </a>
+                    <a href="https://zarinp.al/YOUR_LINK_HERE" target="_blank" class="btn btn-zarinpal">💳 پرداخت ریالی (زرین‌پال)</a>
+                    <a href="https://nowpayments.io/payment?YOUR_ID" target="_blank" class="btn btn-crypto">🪙 پرداخت با ارز دیجیتال (تتر)</a>
                 </div>
             </div>
 
-            <!-- کارت محصول دوم: آکادمی موسیقی -->
             <div class="product-card">
                 <h3>دوره تنظیم، آرنجمنت و میکس (FL Studio)</h3>
                 <p class="product-desc">آموزش گام به گام ساخت ملودی، مدیریت فرکانس‌ها و ساختار شعر و لیریکس در موسیقی مدرن.</p>
                 <div class="price-tag">۷۹۰,۰۰۰ تومان / 25 USDT</div>
-                
                 <div class="payment-buttons">
-                    <a href="https://zarinp.al/YOUR_LINK_HERE" target="_blank" class="btn btn-zarinpal">
-                        <i class="payment-icon">💳</i> پرداخت ریالی (زرین‌پال)
-                    </a>
-                    <a href="https://nowpayments.io/payment?YOUR_ID" target="_blank" class="btn btn-crypto">
-                        <i class="payment-icon">🪙</i> پرداخت ارزی / کریپتو
-                    </a>
+                    <a href="https://zarinp.al/YOUR_LINK_HERE" target="_blank" class="btn btn-zarinpal">💳 پرداخت ریالی (زرین‌پال)</a>
+                    <a href="https://nowpayments.io/payment?YOUR_ID" target="_blank" class="btn btn-crypto">🪙 پرداخت ارزی / کریپتو</a>
                 </div>
             </div>
 
-            <!-- کارت محصول دوم: حمایت از آثار هنری -->
             <div class="product-card">
                 <h3>دسترسی ویژه به آلبوم ترانه‌ها و دکلمه‌ها</h3>
                 <p class="product-desc">دانلود با کیفیت استودیویی تمام اشعار، ملودی‌ها و وکال‌های اختصاصی اِترنال تایم.</p>
                 <div class="price-tag">۱۹۰,۰۰۰ تومان / 5 USD</div>
-                
                 <div class="payment-buttons">
-                    <a href="https://zarinp.al/YOUR_LINK_HERE" target="_blank" class="btn btn-zarinpal">
-                        <i class="payment-icon">💳</i> زرین‌لینک ریالی
-                    </a>
-                    <a href="https://www.paypal.com/cgi-bin/webscr?YOUR_BUTTON_CODE" target="_blank" class="btn btn-paypal">
-                        <i class="payment-icon">🅿️</i> پرداخت بین‌المللی PayPal
-                    </a>
+                    <a href="https://zarinp.al/YOUR_LINK_HERE" target="_blank" class="btn btn-zarinpal">💳 زرین‌لینک ریالی</a>
+                    <a href="https://www.paypal.com/cgi-bin/webscr?YOUR_BUTTON_CODE" target="_blank" class="btn btn-paypal">🅿️ پرداخت بین‌المللی PayPal</a>
                 </div>
             </div>
-
         </div>
     </section>
 
-    <!-- فوتر انتهای صفحه -->
     <footer>
         <div class="matrix-text">time is hallucinations I can control it</div>
     </footer>
-
-    <!-- اسکریپت جاوااسکریپت تب‌ها -->
+ 
+    <!-- جاوااسکریپت -->
     <script>
         function shiftDimension(evt, dimensionId) {
             const panels = document.getElementsByClassName("dimension-panel");
@@ -739,57 +690,50 @@
             document.getElementById(dimensionId).classList.add("active");
             evt.currentTarget.classList.add("active");
         }
+
+        // عملکرد پلیر صوتی اختصاصی
+        const audio = document.getElementById('audio-element');
+        const playBtn = document.getElementById('play-btn');
+        const progressContainer = document.getElementById('progress-container');
+        const progressBar = document.getElementById('progress-bar');
+        const currentTimeEl = document.getElementById('current-time');
+        const durationEl = document.getElementById('duration');
+
+        playBtn.addEventListener('click', () => {
+            if (audio.paused) {
+                audio.play();
+                playBtn.innerText = '❚❚';
+            } else {
+                audio.pause();
+                playBtn.innerText = '▶';
+            }
+        });
+
+        audio.addEventListener('timeupdate', (e) => {
+            const { duration, currentTime } = e.target;
+            if (duration) {
+                const progressPercent = (currentTime / duration) * 100;
+                progressBar.style.width = `${progressPercent}%`;
+
+                const formatTime = (time) => {
+                    const min = Math.floor(time / 60);
+                    const sec = Math.floor(time % 60);
+                    return `${min}:${sec < 10 ? '0' : ''}${sec}`;
+                };
+
+                currentTimeEl.innerText = formatTime(currentTime);
+                durationEl.innerText = formatTime(duration);
+            }
+        });
+
+        progressContainer.addEventListener('click', (e) => {
+            const width = progressContainer.clientWidth;
+            const clickX = e.offsetX;
+            const duration = audio.duration;
+            if (duration) {
+                audio.currentTime = (clickX / width) * duration;
+            }
+        });
     </script>
 </body>
-                 https://m.soundcloud.com/swami-coffee2022/magic-seed-featomid-pakdel
-           <script>
-  const audio = document.getElementById('audio-element');
-  const playBtn = document.getElementById('play-btn');
-  const progressContainer = document.getElementById('progress-container');
-  const progressBar = document.getElementById('progress-bar');
-  const currentTimeEl = document.getElementById('current-time');
-  const durationEl = document.getElementById('duration');
-
-  // پخش / توقف
-  playBtn.addEventListener('click', () => {
-    if (audio.paused) {
-      audio.play();
-      playBtn.innerText = '❚❚';
-    } else {
-      audio.pause();
-      playBtn.innerText = '▶';
-    }
-  });
-
-  // به روزرسانی نوار پیشرفت و تایمر
-  audio.addEventListener('timeupdate', (e) => {
-    const { duration, currentTime } = e.target;
-    if (duration) {
-      const progressPercent = (currentTime / duration) * 100;
-      progressBar.style.width = `${progressPercent}%`;
-
-      // محاسبه دقیقه و ثانیه
-      const formatTime = (time) => {
-        const min = Math.floor(time / 60);
-        const sec = Math.floor(time % 60);
-        return `${min}:${sec < 10 ? '0' : ''}${sec}`;
-      };
-
-      currentTimeEl.innerText = formatTime(currentTime);
-      durationEl.innerText = formatTime(duration);
-    }
-  });
-
-  // جلو/عقب بردن موزیک با کلیک روی نوار پیشرفت
-  progressContainer.addEventListener('click', (e) => {
-    const width = progressContainer.clientWidth;
-    const clickX = e.offsetX;
-    const duration = audio.duration;
-    if (duration) {
-      audio.currentTime = (clickX / width) * duration;
-    }
-  });
-</script>      
 </html>
-        }
-        
