@@ -59,7 +59,30 @@
             align-items: center;
             padding: 0 15px;
         }
+<div class="custom-player">
+  <div class="track-info">
+    <div class="track-title">نام موزیک</div>
+    <div class="artist-name">نام خواننده / اثر</div>
+  </div>
 
+  <!-- فایل صوتی اصلی -->
+  <audio id="audio-element" src="your-music.mp3"></audio>
+
+  <!-- کنترل‌ها -->
+  <div class="player-controls">
+    <button id="play-btn" class="control-btn">▶</button>
+  </div>
+
+  <!-- نوار پیشرفت -->
+  <div class="progress-container" id="progress-container">
+    <div class="progress-bar" id="progress-bar"></div>
+  </div>
+
+  <!-- زمان -->
+  <div class="time-info">
+    <span id="current-time">0:00</span> / <span id="duration">0:00</span>
+  </div>
+</div>
         /* باکس لوگو و نام متصل به آن */
         .logo-area {
             display: flex;
@@ -483,9 +506,81 @@
                 grid-template-columns: 1fr; 
             }
         }
-    </style>
+    </style
+     .custom-player {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 20px;
+  max-width: 350px;
+  margin: 20px auto;
+  color: #fff;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  text-align: center;
+  font-family: sans-serif;
+  direction: rtl;
+}
+
+.track-title {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+}
+
+.artist-name {
+  font-size: 0.85rem;
+  opacity: 0.8;
+  margin-bottom: 15px;
+}
+
+.control-btn {
+  background: rgba(255, 255, 255, 0.25);
+  border: none;
+  color: #fff;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 15px auto;
+}
+
+.control-btn:hover {
+  background: rgba(255, 255, 255, 0.4);
+  transform: scale(1.05);
+}
+
+.progress-container {
+  background: rgba(255, 255, 255, 0.2);
+  height: 6px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-bottom: 8px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  background: #fff;
+  height: 100%;
+  width: 0%;
+  border-radius: 10px;
+  transition: width 0.1s linear;
+}
+
+.time-info {
+  font-size: 0.75rem;
+  opacity: 0.7;
+  direction: ltr;
+}
 </head>
-<body>
+<bo
+}
 
     <!-- هدر متقارن با لوگوی مینیاتوری گیت‌هاب -->
     <header class="site-header">
@@ -646,6 +741,55 @@
         }
     </script>
 </body>
+                 https://m.soundcloud.com/swami-coffee2022/magic-seed-featomid-pakdel
+           <script>
+  const audio = document.getElementById('audio-element');
+  const playBtn = document.getElementById('play-btn');
+  const progressContainer = document.getElementById('progress-container');
+  const progressBar = document.getElementById('progress-bar');
+  const currentTimeEl = document.getElementById('current-time');
+  const durationEl = document.getElementById('duration');
+
+  // پخش / توقف
+  playBtn.addEventListener('click', () => {
+    if (audio.paused) {
+      audio.play();
+      playBtn.innerText = '❚❚';
+    } else {
+      audio.pause();
+      playBtn.innerText = '▶';
+    }
+  });
+
+  // به روزرسانی نوار پیشرفت و تایمر
+  audio.addEventListener('timeupdate', (e) => {
+    const { duration, currentTime } = e.target;
+    if (duration) {
+      const progressPercent = (currentTime / duration) * 100;
+      progressBar.style.width = `${progressPercent}%`;
+
+      // محاسبه دقیقه و ثانیه
+      const formatTime = (time) => {
+        const min = Math.floor(time / 60);
+        const sec = Math.floor(time % 60);
+        return `${min}:${sec < 10 ? '0' : ''}${sec}`;
+      };
+
+      currentTimeEl.innerText = formatTime(currentTime);
+      durationEl.innerText = formatTime(duration);
+    }
+  });
+
+  // جلو/عقب بردن موزیک با کلیک روی نوار پیشرفت
+  progressContainer.addEventListener('click', (e) => {
+    const width = progressContainer.clientWidth;
+    const clickX = e.offsetX;
+    const duration = audio.duration;
+    if (duration) {
+      audio.currentTime = (clickX / width) * duration;
+    }
+  });
+</script>      
 </html>
         }
         
